@@ -1,0 +1,144 @@
+{% extends 'base.html' %} {% block content %}
+<nav class="navbar navbar-light bg-light mb-3">
+  <div class="container-fluid">
+    <span class="navbar-brand mb-0 h1">Stack</span>
+  </div>
+</nav>
+<div class="container-fluid text-center">
+  <div class="row">
+    <div class="col-sm-12 col-md-4 col-lg-3">
+      <div class="mb-3">
+        <label for="page" class="form-label">page</label>
+        <input
+          type="number"
+          class="form-control"
+          id="page"
+          placeholder="page"
+        />
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-4 col-lg-3">
+      <div class="mb-3">
+        <label for="pagesize" class="form-label">pagesize</label>
+        <input
+          type="number"
+          class="form-control"
+          id="pagesize"
+          placeholder="pagesize"
+        />
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-4 col-lg-3">
+      <div class="mb-3">
+        <label for="fromdate" class="form-label">fromdate</label>
+        <input
+          type="date"
+          class="form-control"
+          id="fromdate"
+          placeholder="fromdate"
+        />
+      </div>
+    </div>
+
+    <div class="col-sm-12 col-md-4 col-lg-3">
+      <div class="mb-3">
+        <label for="todate" class="form-label">todate</label>
+        <input
+          type="date"
+          class="form-control"
+          id="todate"
+          placeholder="todate"
+        />
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-4 col-lg-3">
+      <div class="mb-3">
+        <label for="order" class="form-label">order</label>
+        <select class="form-select" id="order">
+          <option selected value="desc">desc</option>
+          <option value="asc">asc</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-4 col-lg-3">
+      <div class="mb-3">
+        <label for="min" class="form-label">min</label>
+        <input type="date" class="form-control" id="min" placeholder="min" />
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-4 col-lg-3">
+      <div class="mb-3">
+        <label for="max" class="form-label">max</label>
+        <input type="date" class="form-control" id="max" placeholder="max" />
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-4 col-lg-3">
+      <div class="mb-3">
+        <label for="sort" class="form-label">sort</label>
+        <select class="form-select" id="sort">
+          <option selected value="activity">activity</option>
+          <option value="votes">votes</option>
+          <option value="creation">creation</option>
+          <option value="relevance">relevance</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="col-sm-12 col-md-4 col-lg-3">
+      <div class="mb-3">
+        <label for="tagged" class="form-label">tagged</label>
+        <input
+          type="text"
+          class="form-control"
+          id="tagged"
+          placeholder="tagged"
+        />
+      </div>
+    </div>
+
+    <div class="col-sm-12 col-md-4 col-lg-3">
+      <div class="mb-3">
+        <label for="nottagged" class="form-label">nottagged</label>
+        <input
+          type="text"
+          class="form-control"
+          id="nottagged"
+          placeholder="nottagged"
+        />
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-4 col-lg-3">
+      <div class="mb-3">
+        <label for="intitle" class="form-label">intitle</label>
+        <input
+          type="text"
+          class="form-control"
+          id="intitle"
+          placeholder="intitle"
+        />
+      </div>
+    </div>
+  </div>
+  <button type="button" class="btn btn-primary mb-3 btn-send">Submit</button>
+  <div class="row">
+    <div class="col">
+      <table
+        class="table table-light"
+        id="our-table"
+        style="table-layout: fixed; width: 100%"
+      >
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>owner</th>
+            <th>Tags</th>
+            <th>link</th>
+            <th>is_answered</th>
+          </tr>
+        </thead>
+        <tbody id="table-body"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+{% endblock %}
